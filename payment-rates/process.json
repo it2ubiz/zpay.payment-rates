@@ -1,0 +1,26 @@
+{
+	"apps": [
+		{
+			"name": "daemon",
+			"script": "./cron.js",
+			"instances": 1,
+			"exec_mode": "cluster",
+			"ignore_watch" : ["node_modules", "logs", "db", ".git"],
+			"watch": true,
+			"watch_options": {
+				"usePolling": true
+			}
+		},
+		{
+			"name": "api",
+			"script": "./app.js",
+			"instances": 1,
+			"exec_mode": "cluster",
+			"ignore_watch" : ["node_modules", "logs", "db", ".git"],
+			"watch": true,
+			"watch_options": {
+				"usePolling": true
+			}
+		}
+	]
+}
